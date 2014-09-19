@@ -1,0 +1,6 @@
+应用层代码只是测试用的，实现对内核功能的调用
+
+内核
+通过Hook SSDT表中的NtOpenProcess来实现进程保护
+通过Hook SSDT表中的NtQuerySystemInformation来实现进程过滤，只显示当前用户所有的进程
+主要亮点是在内核中对操作系统中的用户进行管理，具体见kernelUsermanage模块
