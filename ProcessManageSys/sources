@@ -1,0 +1,9 @@
+TARGETNAME=ProcessManageSys
+#TARGETPATH=$(BASEDIR)\lib
+TARGETPATH=..\sys
+TARGETTYPE=DRIVER
+
+INCLUDES=.\
+
+SOURCES=KernelUserManage.cpp \
+		ProcessManageSys.cpp

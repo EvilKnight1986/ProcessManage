@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="gb2312"?>
+<VisualStudioProject
+	ProjectType="Visual C++"
+	Version="9.00"
+	Name="ProcessManageSys"
+	ProjectGUID="{4EE67C57-BE79-4CD7-B3B0-94AECE62DB41}"
+	RootNamespace="ProcessManageSys"
+	Keyword="MakeFileProj"
+	TargetFrameworkVersion="131072"
+	>
+	<Platforms>
+		<Platform
+			Name="Win32"
+		/>
+	</Platforms>
+	<ToolFiles>
+	</ToolFiles>
+	<Configurations>
+		<Configuration
+			Name="amd64|Win32"
+			OutputDirectory="$(ConfigurationName)"
+			IntermediateDirectory="$(ConfigurationName)"
+			ConfigurationType="0"
+			>
+			<Tool
+				Name="VCNMakeTool"
+				BuildCommandLine="BuildDrv.bat amd64 win7"
+				ReBuildCommandLine="BuildDrv.bat amd64 win7"
+				CleanCommandLine="clean.bat"
+				Output=""
+				PreprocessorDefinitions="WIN32"
+				IncludeSearchPath="$(WLHBASE)\inc\api;$(WLHBASE)\inc\crt;$(WLHBASE)\inc\ddk;$(WLHBASE)\inc"
+				ForcedIncludes=""
+				AssemblySearchPath=""
+				ForcedUsingAssemblies=""
+				CompileAsManaged=""
+			/>
+		</Configuration>
+		<Configuration
+			Name="i386|Win32"
+			OutputDirectory="$(ConfigurationName)"
+			IntermediateDirectory="$(ConfigurationName)"
+			ConfigurationType="0"
+			>
+			<Tool
+				Name="VCNMakeTool"
+				BuildCommandLine="BuildDrv.bat x86 win7"
+				ReBuildCommandLine="BuildDrv.bat x86 win7"
+				CleanCommandLine="clean.bat"
+				Output=""
+				PreprocessorDefinitions="WIN32"
+				IncludeSearchPath="$(WLHBASE)\inc\api;$(WLHBASE)\inc\crt;$(WLHBASE)\inc\ddk;$(WLHBASE)\inc\wdf\kmdf\1.9;$(WLHBASE)\inc"
+				ForcedIncludes=""
+				AssemblySearchPath=""
+				ForcedUsingAssemblies=""
+				CompileAsManaged=""
+			/>
+		</Configuration>
+	</Configurations>
+	<References>
+	</References>
+	<Files>
+		<File
+			RelativePath=".\common.h"
+			>
+		</File>
+		<File
+			RelativePath=".\KernelUserManage.cpp"
+			>
+		</File>
+		<File
+			RelativePath=".\KernelUserManage.h"
+			>
+		</File>
+		<File
+			RelativePath=".\ProcessManageSys.cpp"
+			>
+		</File>
+		<File
+			RelativePath=".\ProcessManageSys.h"
+			>
+		</File>
+		<File
+			RelativePath=".\struct.h"
+			>
+		</File>
+	</Files>
+	<Globals>
+	</Globals>
+</VisualStudioProject>
