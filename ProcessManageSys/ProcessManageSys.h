@@ -178,12 +178,6 @@ void PageProtectON(void) ;
 // 拷贝指定地址指定长度的数据到目标地址
 bool MyMemCopy(PUCHAR pDstAddr, PUCHAR* pSrcAddr, ULONG uSrcSize) ;
 
-// 我自己的NtTerrminateProcess函数
-NTSTATUS DetoursNtTerminateProcess(
-                                 IN HANDLE ProcessHandle OPTIONAL,
-                                 IN NTSTATUS ExitStatus
-                                 );
-
 // 用来接收创建和销毁进程的消息
 VOID
 CreateProcessNotifyRoutine (
@@ -245,7 +239,6 @@ NTSTATUS Test(void) ;
 #pragma alloc_text(PAGE, PageProtectOFF)
 #pragma alloc_text(PAGE, PageProtectON)
 #pragma alloc_text(PAGE, MyMemCopy)
-#pragma alloc_text(PAGE, DetoursNtTerminateProcess)
 #pragma alloc_text(PAGE, CreateProcessNotifyRoutine)
 #pragma alloc_text(PAGE, DetoursNtOpenProcess)
 #pragma alloc_text(PAGE, HookNtOpenProcess)
