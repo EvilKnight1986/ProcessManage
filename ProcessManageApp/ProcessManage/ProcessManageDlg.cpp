@@ -24,17 +24,17 @@
 class CAboutDlg : public CDialog
 {
 public:
-	CAboutDlg();
+        CAboutDlg();
 
 // 对话框数据
-	enum { IDD = IDD_ABOUTBOX };
+        enum { IDD = IDD_ABOUTBOX };
 
-	protected:
-	virtual void DoDataExchange(CDataExchange* pDX);    // DDX/DDV 支持
+        protected:
+        virtual void DoDataExchange(CDataExchange* pDX);    // DDX/DDV 支持
 
 // 实现
 protected:
-	DECLARE_MESSAGE_MAP()
+        DECLARE_MESSAGE_MAP()
 };
 
 CAboutDlg::CAboutDlg() : CDialog(CAboutDlg::IDD)
@@ -43,7 +43,7 @@ CAboutDlg::CAboutDlg() : CDialog(CAboutDlg::IDD)
 
 void CAboutDlg::DoDataExchange(CDataExchange* pDX)
 {
-	CDialog::DoDataExchange(pDX);
+        CDialog::DoDataExchange(pDX);
 }
 
 BEGIN_MESSAGE_MAP(CAboutDlg, CDialog)
@@ -56,11 +56,11 @@ END_MESSAGE_MAP()
 
 
 CProcessManageDlg::CProcessManageDlg(CWnd* pParent /*=NULL*/)
-	: CDialog(CProcessManageDlg::IDD, pParent),m_hDriver(INVALID_HANDLE_VALUE),
+        : CDialog(CProcessManageDlg::IDD, pParent),m_hDriver(INVALID_HANDLE_VALUE),
         m_uNtTerrminateProcessIndex(INVALID_INDEX_VALUE),
         m_uNtCreateProcessExIndex(INVALID_INDEX_VALUE)
 {
-	m_hIcon = AfxGetApp()->LoadIcon(IDR_MAINFRAME);
+        m_hIcon = AfxGetApp()->LoadIcon(IDR_MAINFRAME);
 }
 
 void CProcessManageDlg::DoDataExchange(CDataExchange* pDX)
@@ -91,11 +91,11 @@ END_MESSAGE_MAP()
 
 BOOL CProcessManageDlg::OnInitDialog()
 {
-	CDialog::OnInitDialog();
+        CDialog::OnInitDialog();
 
-	// 将“关于...”菜单项添加到系统菜单中。
+        // 将“关于...”菜单项添加到系统菜单中。
 
-	// IDM_ABOUTBOX 必须在系统命令范围内。
+        // IDM_ABOUTBOX 必须在系统命令范围内。
         ASSERT((IDM_ABOUTBOX & 0xFFF0) == IDM_ABOUTBOX);
         ASSERT(IDM_ABOUTBOX < 0xF000);
 
@@ -116,7 +116,7 @@ BOOL CProcessManageDlg::OnInitDialog()
         SetIcon(m_hIcon, TRUE);			// 设置大图标
         SetIcon(m_hIcon, FALSE);		// 设置小图标
 
-	// TODO: 在此添加额外的初始化代码
+        // TODO: 在此添加额外的初始化代码
         // 初始化状态栏
         m_StatusBar.Create(WS_CHILD | WS_VISIBLE, CRect(0,0,0,0), this, 101) ;
         int arWidth[2] = {260,-1} ;
@@ -197,20 +197,20 @@ BOOL CProcessManageDlg::OnInitDialog()
         //GetSSDTFunctionIndex("NtOpenProcess", &m_uNtOpenProcessIndex) ;
 
 
-	return TRUE;  // 除非将焦点设置到控件，否则返回 TRUE
+        return TRUE;  // 除非将焦点设置到控件，否则返回 TRUE
 }
 
 void CProcessManageDlg::OnSysCommand(UINT nID, LPARAM lParam)
 {
-	if ((nID & 0xFFF0) == IDM_ABOUTBOX)
-	{
-		CAboutDlg dlgAbout;
-		dlgAbout.DoModal();
-	}
-	else
-	{
-		CDialog::OnSysCommand(nID, lParam);
-	}
+        if ((nID & 0xFFF0) == IDM_ABOUTBOX)
+        {
+                CAboutDlg dlgAbout;
+                dlgAbout.DoModal();
+        }
+        else
+        {
+                CDialog::OnSysCommand(nID, lParam);
+        }
 }
 
 // 如果向对话框添加最小化按钮，则需要下面的代码
@@ -219,34 +219,34 @@ void CProcessManageDlg::OnSysCommand(UINT nID, LPARAM lParam)
 
 void CProcessManageDlg::OnPaint()
 {
-	if (IsIconic())
-	{
-		CPaintDC dc(this); // 用于绘制的设备上下文
+        if (IsIconic())
+        {
+                CPaintDC dc(this); // 用于绘制的设备上下文
 
-		SendMessage(WM_ICONERASEBKGND, reinterpret_cast<WPARAM>(dc.GetSafeHdc()), 0);
+                SendMessage(WM_ICONERASEBKGND, reinterpret_cast<WPARAM>(dc.GetSafeHdc()), 0);
 
-		// 使图标在工作区矩形中居中
-		int cxIcon = GetSystemMetrics(SM_CXICON);
-		int cyIcon = GetSystemMetrics(SM_CYICON);
-		CRect rect;
-		GetClientRect(&rect);
-		int x = (rect.Width() - cxIcon + 1) / 2;
-		int y = (rect.Height() - cyIcon + 1) / 2;
+                // 使图标在工作区矩形中居中
+                int cxIcon = GetSystemMetrics(SM_CXICON);
+                int cyIcon = GetSystemMetrics(SM_CYICON);
+                CRect rect;
+                GetClientRect(&rect);
+                int x = (rect.Width() - cxIcon + 1) / 2;
+                int y = (rect.Height() - cyIcon + 1) / 2;
 
-		// 绘制图标
-		dc.DrawIcon(x, y, m_hIcon);
-	}
-	else
-	{
-		CDialog::OnPaint();
-	}
+                // 绘制图标
+                dc.DrawIcon(x, y, m_hIcon);
+        }
+        else
+        {
+                CDialog::OnPaint();
+        }
 }
 
 //当用户拖动最小化窗口时系统调用此函数取得光标
 //显示。
 HCURSOR CProcessManageDlg::OnQueryDragIcon()
 {
-	return static_cast<HCURSOR>(m_hIcon);
+        return static_cast<HCURSOR>(m_hIcon);
 }
 void CProcessManageDlg::OnBnClickedTest()
 {
@@ -289,59 +289,69 @@ void CProcessManageDlg::AutoSize(CListCtrl * pList)
 }
 void CProcessManageDlg::OnBnClickedRefresh()
 {
-    // TODO: 在此添加控件通知处理程序代码
-    LPBYTE pbuf =  GetProcessList() ;
-    PSYSTEM_PROCESSES pSysProcess = (PSYSTEM_PROCESSES)pbuf ;
-    CString str ;
+        // TODO: 在此添加控件通知处理程序代码
+        LPBYTE pbuf =  GetProcessList() ;
+        PSYSTEM_PROCESSES pSysProcess = (PSYSTEM_PROCESSES)pbuf ;
+        CString str ;
+        int i(0) ;
 
-    // 先清除所有的数据以及取消重绘
-    m_ProcessList.DeleteAllItems() ;
-    m_ProcessList.SetRedraw(FALSE) ;
+        // 先清除所有的数据以及取消重绘
+        m_ProcessList.DeleteAllItems() ;
+        m_ProcessList.SetRedraw(FALSE) ;
 
-    if(NULL == pSysProcess)
-    {
-        MessageBox(_T("遍历进程错误!"), _T("Error"), MB_ICONERROR) ;
-        return ;
-    }
-    for (int i(0); 
-           pSysProcess->NextEntryDelta != 0;
-            pSysProcess = (PSYSTEM_PROCESSES)( (DWORD)pSysProcess + pSysProcess->NextEntryDelta ),
-            ++i)
-    {
-        // 单独处理进程0
-        if (0 ==pSysProcess->ProcessId && NULL == pSysProcess->ProcessName.Buffer )
+        if(NULL == pSysProcess)
         {
-            m_ProcessList.InsertItem(i, _T("System Idle Process")) ;
-            m_ProcessList.SetItemText(i, 1, _T("0")) ;
-            m_ProcessList.SetItemData(i, 0) ;
+                MessageBox(_T("遍历进程错误!"), _T("Error"), MB_ICONERROR) ;
+                return ;
         }
-        else
+
+        while (TRUE)
         {
-            if ( pSysProcess->ProcessName.Buffer != NULL )
-            {
-                m_ProcessList.InsertItem(i, pSysProcess->ProcessName.Buffer) ;
-            }
-            else
-            {
-                m_ProcessList.InsertItem(i, _T("Get Process Name filed!")) ;
-            }
-            str.Format(_T("%d"), pSysProcess->ProcessId) ;
-            m_ProcessList.SetItemText(i, 1, str) ;
-            m_ProcessList.SetItemData(i, pSysProcess->ProcessId) ;
-            /*
-            printf ("InheritedFromProcessId:\t\t%d\n",pSysProcess->InheritedFromProcessId);
-            printf ("ProcessId:\t\t\t%d\n",pSysProcess->ProcessId);
-            printf("HandleCount:\t\t\t%d\n",pSysProcess->HandleCount);
-            printf("ThreadCount:\t\t\t%d\n",pSysProcess->ThreadCount);
-            */
+                // 单独处理进程0
+                if (0 ==pSysProcess->ProcessId && NULL == pSysProcess->ProcessName.Buffer )
+                {
+                        m_ProcessList.InsertItem(i, _T("System Idle Process")) ;
+                        m_ProcessList.SetItemText(i, 1, _T("0")) ;
+                        m_ProcessList.SetItemData(i, 0) ;
+                }
+                else
+                {
+                        if ( pSysProcess->ProcessName.Buffer != NULL )
+                        {
+                                m_ProcessList.InsertItem(i, pSysProcess->ProcessName.Buffer) ;
+                        }
+                        else
+                        {
+                                m_ProcessList.InsertItem(i, _T("Get Process Name filed!")) ;
+                        }
+                        str.Format(_T("%d"), pSysProcess->ProcessId) ;
+                        m_ProcessList.SetItemText(i, 1, str) ;
+                        m_ProcessList.SetItemData(i, pSysProcess->ProcessId) ;
+                        /*
+                        printf ("InheritedFromProcessId:\t\t%d\n",pSysProcess->InheritedFromProcessId);
+                        printf ("ProcessId:\t\t\t%d\n",pSysProcess->ProcessId);
+                        printf("HandleCount:\t\t\t%d\n",pSysProcess->HandleCount);
+                        printf("ThreadCount:\t\t\t%d\n",pSysProcess->ThreadCount);
+                        */
+                }
+
+                if (0 == pSysProcess->NextEntryDelta )
+                {
+                        break ;
+                }
+                pSysProcess = (PSYSTEM_PROCESSES)((DWORD)pSysProcess + pSysProcess->NextEntryDelta) ;
+                ++i ;
+
         }
-    }
-    if (NULL != pbuf)
-    {
-        delete [] pbuf ;
-    }
-    AutoSize(&m_ProcessList) ;
-    m_ProcessList.SetRedraw(TRUE) ;
+
+        if (NULL != pbuf)
+        {
+                delete [] pbuf ;
+                pbuf = NULL ;
+        }
+
+        AutoSize(&m_ProcessList) ;
+        m_ProcessList.SetRedraw(TRUE) ;
 }
 
 void CProcessManageDlg::OnLvnItemchangedProcesslist(NMHDR *pNMHDR, LRESULT *pResult)

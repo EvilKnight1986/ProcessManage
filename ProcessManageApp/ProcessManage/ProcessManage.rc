@@ -124,8 +124,8 @@ END
 //
 
 VS_VERSION_INFO VERSIONINFO
- FILEVERSION 1,0,0,2
- PRODUCTVERSION 1,0,0,2
+ FILEVERSION 1,0,0,1
+ PRODUCTVERSION 1,0,0,1
  FILEFLAGSMASK 0x3fL
 #ifdef _DEBUG
  FILEFLAGS 0x1L
@@ -140,14 +140,12 @@ BEGIN
     BEGIN
         BLOCK "080403a8"
         BEGIN
-            VALUE "CompanyName", "国芯云"
             VALUE "FileDescription", "ProcessManage"
-            VALUE "FileVersion", "1.0.0.2"
+            VALUE "FileVersion", "1.0.0.1"
             VALUE "InternalName", "ProcessManage.exe"
-            VALUE "LegalCopyright", "(C) <珠海国芯云科技有限公司>。保留所有权利。"
             VALUE "OriginalFilename", "ProcessManage.exe"
             VALUE "ProductName", "ProcessManage"
-            VALUE "ProductVersion", "1.0.0.2"
+            VALUE "ProductVersion", "1.0.0.1"
         END
     END
     BLOCK "VarFileInfo"
